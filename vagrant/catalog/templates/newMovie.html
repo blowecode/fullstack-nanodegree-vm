@@ -1,0 +1,22 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Create New Movie</h2>
+    <form action="{{ url_for('newMovie', genre_id = genre.id)}}" method = 'post'>
+    <p>Name:</p>
+		<input type ='text' size='80' name='name' required>
+    <p>Rating:</p>
+    <input type='text' size='5' name='rating'>
+    <p>Score:</p>
+    <input type="text" size="3" name="score">
+    <p>Description</p>
+    <input type="text" size="250" name="description">
+    <input type='submit' value='Create'>
+    <br>
+    <a href='{{url_for("displayMovies", genre_id = genre.id)}}'><p>Back to {{genre.name}}</p></a>
+    <a href='{{url_for("displayGenres")}}'><p>Back to Genres</p></a>
+    </form>
+</body>
+</html>

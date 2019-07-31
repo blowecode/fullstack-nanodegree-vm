@@ -1,0 +1,13 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>{{movie.name}}</h2>
+    <p>{{movie.rating}} | {{movie.score}}</p>
+    <p>{{movie.description}}</p>
+		<br>
+    <a href='{{url_for("displayMovies", genre_id = genre.id)}}'><p>Back to {{genre.name}}</p></a>
+    <a href='{{url_for("displayGenres")}}'><p>Back to Genres</p></a>
+</body>
+</html>

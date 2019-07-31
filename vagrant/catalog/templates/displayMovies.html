@@ -1,0 +1,16 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>{{genre.name}}</h2>
+    <p><a href="{{url_for("editGenre", genre_id = genre.id)}}">Edit</a> | <a href="{{url_for("deleteGenre", genre_id = genre.id)}}">Delete</a></p>
+    <br>
+    {% for movie in movies %}
+      <a href='{{url_for("displayMovie", genre_id = genre.id, movie_id = movie.id)}}'><p>{{movie.name}}</p></a>
+  	{% endfor %}
+    <br>
+    <a href="{{url_for("newMovie", genre_id = genre.id)}}">Create New Movie</a>
+    <a href='{{url_for("displayGenres")}}'><p>Back to Genres</p></a>
+</body>
+</html>

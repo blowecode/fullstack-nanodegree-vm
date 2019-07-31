@@ -1,0 +1,14 @@
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>All Movies</h2>
+    <br>
+    {% for movie in movies %}
+      <a href='{{url_for("displayMovie", genre_id = movie.genre.id, movie_id = movie.id)}}'><p>{{movie.name}}</p></a>
+  	{% endfor %}
+    <br>
+    <a href='{{url_for("displayGenres")}}'><p>Back to Genres</p></a>
+</body>
+</html>
